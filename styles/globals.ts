@@ -6,6 +6,7 @@ export default createGlobalStyle<{ theme: Theme }>`
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: inherit;
   }
 
   body {
@@ -21,5 +22,9 @@ export default createGlobalStyle<{ theme: Theme }>`
 
   ul {
     list-style: none;
+  }
+
+  p {
+    max-width: 60ch;
   }
 `;
