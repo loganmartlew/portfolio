@@ -20,8 +20,10 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["components/*"],
+      "@hooks/*": ["hooks/*"],
       "@public/*": ["public/*"],
       "@types/*": ["types/index.ts"],
+      "@styles/*": ["styles/*"],
     }
   },
   "include": [
