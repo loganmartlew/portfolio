@@ -1,10 +1,17 @@
 import { FC } from 'react';
+import styled from 'styled-components';
+import Header from '@components/Header';
+
+const LayoutWrapper = styled.div`
+  min-height: 100vh;
+`;
 
 const Layout: FC = ({ children }) => {
   return (
-    <div>
+    <LayoutWrapper>
+      <Header />
       <main>{children}</main>
-    </div>
+    </LayoutWrapper>
   );
 };
 
