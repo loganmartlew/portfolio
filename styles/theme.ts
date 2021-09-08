@@ -7,8 +7,15 @@ const colors = {
   primary: Color('#00C2FF'),
 };
 
+const fontWeights = {
+  light: 400,
+  regular: 600,
+  bold: 800,
+};
+
 export const theme = {
   colors,
+  fontWeights,
 };
 
 export type Theme = typeof theme;

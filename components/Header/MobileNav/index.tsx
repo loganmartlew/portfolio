@@ -5,6 +5,14 @@ import HamburgerMenu from 'react-hamburger-menu';
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import { MdEmail } from 'react-icons/md';
 import { Theme } from '@styles/theme';
+import {
+  HamburgerWrapper,
+  NavContainer,
+  NavLinks,
+  NavLink,
+  SocialLinks,
+  SocialLink,
+} from './MobileNavStyles';
 
 interface Props {}
 
@@ -16,57 +24,61 @@ const MobileNav: FC<Props> = () => {
 
   return (
     <>
-      <div>
+      <HamburgerWrapper>
         <HamburgerMenu
           isOpen={menuOpen}
           menuClicked={toggleMenu}
           color={theme.colors.white.string()}
           strokeWidth={3}
           borderRadius={2}
+          width={25}
+          height={18}
         />
-      </div>
-      <div>
-        <ul>
-          <li>
-            <Link href='/'>Home</Link>
-          </li>
-          <li>
-            <Link href='/about'>About</Link>
-          </li>
-          <li>
-            <Link href='/projects'>Projects</Link>
-          </li>
-          <li>
-            <Link href='/cv'>CV</Link>
-          </li>
-          <li>
-            <Link href='/contact'>Contact</Link>
-          </li>
-        </ul>
-        <div>
-          <span>
-            <Link href='https://github.com/loganmartlew' passHref>
-              <a target='_blank'>
-                <AiFillGithub />
-              </a>
-            </Link>
-          </span>
-          <span>
-            <Link href='https://www.linkedin.com/in/logan-martlew/' passHref>
-              <a target='_blank'>
-                <AiFillLinkedin />
-              </a>
-            </Link>
-          </span>
-          <span>
-            <Link href='mailto:logan.martlew@gmail.com' passHref>
-              <a target='_blank'>
-                <MdEmail />
-              </a>
-            </Link>
-          </span>
-        </div>
-      </div>
+      </HamburgerWrapper>
+      {menuOpen && (
+        <NavContainer>
+          <NavLinks>
+            <NavLink>
+              <Link href='/'>Home</Link>
+            </NavLink>
+            <NavLink>
+              <Link href='/about'>About</Link>
+            </NavLink>
+            <NavLink>
+              <Link href='/projects'>Projects</Link>
+            </NavLink>
+            <NavLink>
+              <Link href='/cv'>CV</Link>
+            </NavLink>
+            <NavLink>
+              <Link href='/contact'>Contact</Link>
+            </NavLink>
+          </NavLinks>
+          <SocialLinks>
+            <SocialLink>
+              <Link href='https://github.com/loganmartlew' passHref>
+                <a target='_blank'>
+                  <AiFillGithub />
+                </a>
+              </Link>
+            </SocialLink>
+            <SocialLink>
+              <Link href='https://www.linkedin.com/in/logan-martlew/' passHref>
+                <a target='_blank'>
+                  <AiFillLinkedin />
+                </a>
+              </Link>
+            </SocialLink>
+            <SocialLink>
+              <Link href='mailto:logan.martlew@gmail.com' passHref>
+                <a target='_blank'>
+                  <MdEmail />
+                </a>
+              </Link>
+            </SocialLink>
+          </SocialLinks>
+        </NavContainer>
+      )}
     </>
   );
 };
