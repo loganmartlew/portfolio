@@ -5,6 +5,7 @@ export const HamburgerWrapper = styled.div`
   align-items: center;
   height: 100%;
   cursor: pointer;
+  z-index: 5;
 `;
 
 export const NavContainer = styled.nav`
@@ -17,10 +18,11 @@ export const NavContainer = styled.nav`
   align-content: center;
   gap: 3em;
   width: 100vw;
-  height: calc(100vh - 3.8rem);
-  padding-bottom: 4rem;
+  height: 0;
+  padding-bottom: 0;
   background-color: ${({ theme }) => theme.colors.dark.hsl()};
   color: ${({ theme }) => theme.colors.white.hsl()};
+  overflow: hidden;
 `;
 
 export const NavLinks = styled.ul`

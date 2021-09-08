@@ -15,4 +15,5 @@ export const TextLogo = styled.h1`
   color: ${({ theme }) => theme.colors.primary.hsl()};
   font-weight: ${({ theme }) => theme.fontWeights.bold};
   font-size: 1.5rem;
+  z-index: 5;
 `;

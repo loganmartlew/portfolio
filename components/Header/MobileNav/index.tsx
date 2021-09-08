@@ -1,9 +1,10 @@
-import { useState, FC } from 'react';
+import { useState, useEffect, useRef, FC } from 'react';
 import Link from 'next/link';
 import { useTheme } from 'styled-components';
 import HamburgerMenu from 'react-hamburger-menu';
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import { MdEmail } from 'react-icons/md';
+import { gsap } from 'gsap';
 import { Theme } from '@styles/theme';
 import {
   HamburgerWrapper,
@@ -20,7 +21,40 @@ const MobileNav: FC<Props> = () => {
   const [menuOpen, setOpen] = useState<boolean>(false);
   const theme = useTheme() as Theme;
 
-  const toggleMenu = () => setOpen(prev => !prev);
+  const navRef = useRef<HTMLElement>(null);
+
+  const openMenu = () => {
+    setOpen(true);
+
+    setTimeout(() => {
+      gsap.to(navRef.current, {
+        height: 'calc(100vh - 3.8rem)',
+        paddingBottom: '4rem',
+        ease: 'power1.inOut',
+        duration: 0.3,
+      });
+    });
+  };
+
+  const closeMenu = () => {
+    gsap.to(navRef.current, {
+      height: 0,
+      paddingBottom: 0,
+      ease: 'power1.inOut',
+      duration: 0.3,
+      onComplete: () => setOpen(false),
+    });
+  };
+
+  const toggleMenu = () => {
+    if (menuOpen) {
+      closeMenu();
+    }
+
+    if (!menuOpen) {
+      openMenu();
+    }
+  };
 
   return (
     <>
@@ -36,7 +70,7 @@ const MobileNav: FC<Props> = () => {
         />
       </HamburgerWrapper>
       {menuOpen && (
-        <NavContainer>
+        <NavContainer ref={navRef}>
           <NavLinks>
             <NavLink>
               <Link href='/'>Home</Link>
