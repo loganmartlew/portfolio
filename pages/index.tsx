@@ -1,14 +1,8 @@
 import { FC } from 'react';
+import HomePage from '@components/pages/HomePage';
 
 const Home: FC = () => {
-  return (
-    <>
-      <h1>Hello World</h1>
-      <h1>Hello World</h1>
-      <h1>Hello World</h1>
-      <h1>Hello World</h1>
-    </>
-  );
+  return <HomePage />;
 };
 
 export default Home;

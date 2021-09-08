@@ -11,7 +11,7 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }) => {
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <Layout>
-        <Component {...pageProps} />;
+        <Component {...pageProps} />
       </Layout>
     </ThemeProvider>
   );
