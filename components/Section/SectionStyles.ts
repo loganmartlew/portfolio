@@ -9,8 +9,13 @@ export const SectionContainer = styled.section<Props>`
   flex-direction: column;
   gap: 1em;
   padding: 1.2em 1em;
-  background-color: ${({ theme, dark }) =>
-    dark ? theme.colors.black : 'none'};
+
+  ${({ theme, dark }) =>
+    dark &&
+    `
+    background-color: ${theme.colors.black};
+    color: ${theme.colors.white};
+  `}
 `;
 
 export const TitleContainer = styled.div`
