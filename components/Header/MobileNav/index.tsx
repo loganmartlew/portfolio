@@ -62,7 +62,7 @@ const MobileNav: FC<Props> = () => {
         <HamburgerMenu
           isOpen={menuOpen}
           menuClicked={toggleMenu}
-          color={theme.colors.white.string()}
+          color={theme.colors.white}
           strokeWidth={3}
           borderRadius={2}
           width={25}

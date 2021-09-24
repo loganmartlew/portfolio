@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 interface Props {
-  light: boolean;
+  dark: boolean;
 }
 
 export const SectionContainer = styled.section<Props>`
@@ -9,12 +9,12 @@ export const SectionContainer = styled.section<Props>`
   flex-direction: column;
   gap: 1em;
   padding: 1.2em 1em;
-  background-color: ${({ theme, light }) =>
-    light ? theme.colors.white.hsl() : 'none'};
+  background-color: ${({ theme, dark }) =>
+    dark ? theme.colors.black : 'none'};
 `;
 
 export const TitleContainer = styled.div`
-  color: ${({ theme }) => theme.colors.primary.hsl()};
+  color: ${({ theme }) => theme.colors.primary};
 `;
 
 export const Title = styled.h3`

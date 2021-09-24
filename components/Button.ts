@@ -1,6 +1,6 @@
 import styled from 'styled-components';
+import { lighten } from 'polished';
 import { Theme } from '@styles/theme';
-import Color from 'color';
 
 interface Props {
   block?: boolean;
@@ -9,14 +9,14 @@ interface Props {
 }
 
 interface ColorProp {
-  border: Color;
-  background: Color;
-  hoverBackground: Color;
-  text: Color;
-  hoverText: Color;
+  border: string;
+  background: string;
+  hoverBackground: string;
+  text: string;
+  hoverText: string;
 }
 
-const transparent = Color('hsla(0, 0%, 0%, 0)');
+const transparent = 'hsla(0, 0%, 0%, 0)';
 
 const getColorProps = (colors: ColorProp) => {
   const { border, background, hoverBackground, text, hoverText } = colors;
@@ -37,28 +37,28 @@ const getColorProps = (colors: ColorProp) => {
 const getColors = (color: Props['color'], theme: Theme): ColorProp => {
   switch (color) {
     case 'white': {
-      const border = theme.colors.white.hsl();
+      const border = theme.colors.white;
       const background = transparent;
       const hoverBackground = border;
       const text = border;
-      const hoverText = theme.colors.black.hsl();
+      const hoverText = theme.colors.black;
       return { border, background, hoverBackground, text, hoverText };
     }
     case 'danger': {
-      const border = theme.colors.danger.hsl();
+      const border = theme.colors.danger;
       const background = transparent;
       const hoverBackground = border;
       const text = border;
-      const hoverText = theme.colors.white.hsl();
+      const hoverText = theme.colors.white;
       return { border, background, hoverBackground, text, hoverText };
     }
     case 'accent':
     default: {
-      const border = theme.colors.primary.hsl();
+      const border = theme.colors.primary;
       const background = transparent;
       const hoverBackground = border;
       const text = border;
-      const hoverText = theme.colors.white.hsl();
+      const hoverText = theme.colors.white;
       return { border, background, hoverBackground, text, hoverText };
     }
   }
@@ -73,7 +73,7 @@ const adjustColorsForSolid = (
   return {
     border: colors.border,
     background: colors.border,
-    hoverBackground: colors.border.lighten(0.2),
+    hoverBackground: lighten(0.2, colors.border),
     text: colors.hoverText,
     hoverText: colors.hoverText,
   };

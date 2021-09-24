@@ -20,8 +20,8 @@ export const NavContainer = styled.nav`
   width: 100vw;
   height: 0;
   padding-bottom: 0;
-  background-color: ${({ theme }) => theme.colors.dark.hsl()};
-  color: ${({ theme }) => theme.colors.white.hsl()};
+  background-color: ${({ theme }) => theme.colors.dark};
+  color: ${({ theme }) => theme.colors.white};
   overflow: hidden;
 `;
 
@@ -38,7 +38,7 @@ export const NavLink = styled.li`
   transition: color 150ms;
 
   &:hover {
-    color: ${({ theme }) => theme.colors.primary.hsl()};
+    color: ${({ theme }) => theme.colors.primary};
   }
 `;
 
@@ -53,6 +53,6 @@ export const SocialLink = styled.span`
   transition: color 150ms;
 
   &:hover {
-    color: ${({ theme }) => theme.colors.primary.hsl()};
+    color: ${({ theme }) => theme.colors.primary};
   }
 `;

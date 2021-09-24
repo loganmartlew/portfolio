@@ -8,11 +8,11 @@ export const HeaderContainer = styled.header`
   justify-content: space-between;
   width: 100%;
   padding: 1em;
-  background-color: ${({ theme }) => theme.colors.dark.hsl()};
+  background-color: ${({ theme }) => theme.colors.dark};
 `;
 
 export const TextLogo = styled.h1`
-  color: ${({ theme }) => theme.colors.primary.hsl()};
+  color: ${({ theme }) => theme.colors.primary};
   font-weight: ${({ theme }) => theme.fontWeights.bold};
   font-size: 1.5rem;
   z-index: 5;

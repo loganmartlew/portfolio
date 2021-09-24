@@ -10,7 +10,7 @@ export default createGlobalStyle<{ theme: Theme }>`
   }
 
   body {
-    background-color: ${({ theme }) => theme.colors.dark.hsl().string()};
+    background-color: ${({ theme }) => theme.colors.dark};
     font-family: 'Urbanist', sans-serif;
     font-weight: ${({ theme }) => theme.fontWeights.regular}
   }
