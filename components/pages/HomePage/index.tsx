@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import Hero from './Hero';
 import About from './About';
+import Projects from './Projects';
 
 interface Props {}
 
@@ -9,6 +10,7 @@ const HomePage: FC<Props> = () => {
     <>
       <Hero />
       <About />
+      <Projects />
     </>
   );
 };

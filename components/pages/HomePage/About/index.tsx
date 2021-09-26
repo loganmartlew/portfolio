@@ -6,7 +6,7 @@ interface Props {}
 
 const About: FC<Props> = () => {
   return (
-    <Section title={'About Me'} dark>
+    <Section title={`About Me`} dark>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus
         laborum, tenetur non ipsam quaerat dolores error itaque maiores mollitia

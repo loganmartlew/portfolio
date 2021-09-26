@@ -3,17 +3,19 @@ import { FC } from 'react';
 import { SectionContainer, TitleContainer, Title } from './SectionStyles';
 
 interface Props {
-  title: string;
+  title?: string;
   dark?: boolean;
 }
 
 const Section: FC<Props> = ({ title, dark, children }) => {
   return (
     <SectionContainer dark={dark || false}>
-      <TitleContainer>
-        <Title>{title}</Title>
-        <Divider />
-      </TitleContainer>
+      {title && (
+        <TitleContainer>
+          <Title>{title}</Title>
+          <Divider />
+        </TitleContainer>
+      )}
       {children}
     </SectionContainer>
   );
