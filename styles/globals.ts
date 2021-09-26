@@ -26,5 +26,6 @@ export default createGlobalStyle<{ theme: Theme }>`
 
   p {
     max-width: 60ch;
+    font-weight: 400;
   }
 `;

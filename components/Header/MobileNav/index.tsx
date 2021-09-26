@@ -31,7 +31,7 @@ const MobileNav: FC<Props> = () => {
         height: 'calc(100vh - 3.8rem)',
         paddingBottom: '4rem',
         ease: 'power1.inOut',
-        duration: 0.3,
+        duration: 0.15,
       });
     });
   };
@@ -41,7 +41,7 @@ const MobileNav: FC<Props> = () => {
       height: 0,
       paddingBottom: 0,
       ease: 'power1.inOut',
-      duration: 0.3,
+      duration: 0.15,
       onComplete: () => setOpen(false),
     });
   };
