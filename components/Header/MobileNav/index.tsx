@@ -63,6 +63,11 @@ const MobileNav: FC<Props> = () => {
     closeMenu();
   }, [pathname]);
 
+  const isActive = (linkPath: string) => {
+    if (linkPath === pathname) return true;
+    return false;
+  };
+
   return (
     <>
       <HamburgerWrapper>
@@ -79,19 +84,19 @@ const MobileNav: FC<Props> = () => {
       {menuOpen && (
         <NavContainer ref={navRef}>
           <NavLinks>
-            <NavLink>
+            <NavLink active={isActive('/')}>
               <Link href='/'>Home</Link>
             </NavLink>
-            <NavLink>
+            <NavLink active={isActive('/about')}>
               <Link href='/about'>About</Link>
             </NavLink>
-            <NavLink>
+            <NavLink active={isActive('/projects')}>
               <Link href='/projects'>Projects</Link>
             </NavLink>
-            <NavLink>
+            <NavLink active={isActive('/cv')}>
               <Link href='/cv'>CV</Link>
             </NavLink>
-            <NavLink>
+            <NavLink active={isActive('/contact')}>
               <Link href='/contact'>Contact</Link>
             </NavLink>
           </NavLinks>

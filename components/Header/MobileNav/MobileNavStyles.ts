@@ -33,9 +33,30 @@ export const NavLinks = styled.ul`
   gap: 1.5em;
 `;
 
-export const NavLink = styled.li`
+interface LinkProps {
+  active: boolean;
+}
+
+export const NavLink = styled.li<LinkProps>`
+  position: relative;
   font-size: 1.4rem;
   transition: color 150ms;
+
+  &::before {
+    --size: 0.3em;
+
+    content: '';
+    position: absolute;
+    width: var(--size);
+    height: var(--size);
+    top: 50%;
+    left: calc(var(--size) * -2);
+    transform: translateY(-50%);
+    border-radius: var(--size);
+    background-color: ${({ theme }) => theme.colors.primary};
+
+    display: ${({ active }) => (active ? 'block' : 'none')};
+  }
 
   &:hover {
     color: ${({ theme }) => theme.colors.primary};
