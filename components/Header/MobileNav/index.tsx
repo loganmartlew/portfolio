@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, FC } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useTheme } from 'styled-components';
 import HamburgerMenu from 'react-hamburger-menu';
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
@@ -19,7 +20,9 @@ interface Props {}
 
 const MobileNav: FC<Props> = () => {
   const [menuOpen, setOpen] = useState<boolean>(false);
+
   const theme = useTheme() as Theme;
+  const { pathname } = useRouter();
 
   const navRef = useRef<HTMLElement>(null);
 
@@ -55,6 +58,10 @@ const MobileNav: FC<Props> = () => {
       openMenu();
     }
   };
+
+  useEffect(() => {
+    closeMenu();
+  }, [pathname]);
 
   return (
     <>
