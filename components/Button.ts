@@ -80,6 +80,9 @@ const adjustColorsForSolid = (
 };
 
 export default styled.button<Props>`
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
   padding: 0.2em 0.6em;
   border: 3px solid;
   border-radius: 200vh;
