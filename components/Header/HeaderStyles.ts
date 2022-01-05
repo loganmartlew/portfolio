@@ -6,6 +6,7 @@ export const HeaderContainer = styled.header`
   left: 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   padding: 1em;
   background-color: ${({ theme }) => theme.colors.dark};
